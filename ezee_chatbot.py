@@ -11,7 +11,7 @@ CORS(app)
 # HTML front – chatbot UI
 @app.route('/')
 def serve_html():
-    return send_file("chatbot_ezee.html")
+    return send_file("chatbot ezee.html")
 
 # Nastavenia pre OpenRouter
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
