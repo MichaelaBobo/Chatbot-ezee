@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL = "openai/gpt-3.5-turbo"
 
 PROMPTS = {
