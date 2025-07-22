@@ -1,13 +1,19 @@
-from flask import Flask, request, jsonify
-import requests
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from datetime import datetime
+import requests
 import openpyxl
 import os
 
 app = Flask(__name__)
 CORS(app)
 
+# HTML front – chatbot UI
+@app.route('/')
+def serve_html():
+    return send_file("chatbot_ezee.html")
+
+# Nastavenia pre OpenRouter
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL = "openai/gpt-3.5-turbo"
 
